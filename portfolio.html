@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Portfolio</title>
+    <style >
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+:root{
+    --text-color:#f5f5f5;
+    --hover-color:#12f7ff;
+    --bg-color:#250821;
+    --secon-bg-color:#292e33;
+    --big-font:2.5rem;
+    --norma-font:2rem;
+    --neon-box-shadow:0 0 .5rem #12f7ff;
+    --h2-font:3rem;
+    --font-neon-text-shadow: 0 0 10px rgba(18,247,255,0.3),
+    0 0 20px rgba(18, 247, 255, 0.3),
+    0 0 30px rgba(18, 247, 255, 0.3),
+    0 0 40px rgba(18, 247, 255, 0.3),
+    0 0 70px rgba(18, 247, 255, 0.3),
+    0 0 80px rgba(18, 247, 255, 0.3),
+    0 0 100px rgba(18, 247, 255, 0.3),
+    0 0 150px rgba(18, 247, 255, 0.3);;
+}
+::-webkit-scrollbar{
+    height: 0;
+    width: .5rem;
+}
+::-webkit-scrollbar-track{
+    background: var(--secon-bg-color);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--hover-color);
+    border-radius: 5rem;
+
+}
+body{    
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    }
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    
+}
+header.sticky{
+    background: var(--bg-color);
+    border-bottom:1px solid var(--secon-bg-color);
+    padding: 12px 10%;
+}
+.logo{
+    font-size:26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+}
+span{
+    color: var(--hover-color);
+}
+.navlist{
+    display: flex;
+}
+.navlist a{
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 10px 20px;
+}
+.navlist a:hover{
+    color: var(--hover-color);
+    text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
+    0 0 20px rgba(18, 247, 255, 0.6),
+    0 0 30px rgba(18, 247, 255, 0.6),
+    0 0 40px rgba(18, 247, 255, 0.6),
+    0 0 70px rgba(18, 247, 255, 0.6),
+    0 0 80px rgba(18, 247, 255, 0.6),
+    0 0 100px rgba(18, 247, 255, 0.6),
+    0 0 150px rgba(18, 247, 255, 0.6);
+    ;
+}
+.navlist a .active{
+    color: var(--hover-color);
+}
+#menu-icon{
+    font-size: 1.8rem;
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 25px;
+    background: var(--hover-color);
+    border-radius: 3px;
+    color: var(--secon-bg-color);
+    display: none;
+
+}
+
+section{
+    padding:100px 10%;
+}
+.home{
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-gap: 4em;
+}
+.home-content{
+    max-width: 600px;
+}
+.home-content h1{
+    font-size: var(--big-font);
+    font-weight: 700;
+}
+.change-text{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.change-text h3{
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+
+}
+.change-text h3 .word{
+position:absolute;
+display: flex;
+opacity: 0;
+}
+.change-text h3 .word .letter{
+    transform-origin: center center 25px;
+}
+.change-text h3 .word .letter.out{
+    transform: rotateX(90deg);
+    transition: 0.32s cubic-bezier(0.6,0,0.7,0.2);
+}
+.change-text h3 .word .letter.in{
+    transition: 0.38s ease;
+
+}
+.change-text h3 .word .letter.behind{
+    transform: rotateX(-90deg);
+}
+
+.home-content p{
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+.info-box{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 1rem 0 2rem;
+}
+.info-box h5{
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+.info-box span{
+    font-size: .9rem;
+    color: #bdbdbd;
+}
+.btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 45px;
+}
+.btn-box .btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 5px;
+    position: relative;overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--hover-color);
+}
+.btn:hover{
+    color: var(--hover-color);
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:var(--bg-color);
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+}
+.btn:hover::before{
+    width: 100%;
+}
+.btn:nth-child(2){
+    background: var(--bg-color);
+    color: var(--hover-color);
+}
+.btn:nth-child(2):hover{
+    color: var(--bg-color);
+
+}
+.btn:nth-child(2)::before{
+    background: var(--hover-color);
+}
+.social-icons{
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 40px;
+}
+.social-icons a{
+    display: inline-flex;
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    color: var(--hover-color);
+    border: 2px solod var(--hover-color);
+    transition: .6s;
+    box-shadow: 0 0 0.3rem #12f7ff;
+    border-radius: 5px;
+    position:relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.social-icons a i{
+font-size: 1.5rem;
+}
+.social-icons a:hover{
+    color: var(--bg-color);
+}
+.social-icons a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background:var(--hover-color);
+    transition:.6s;
+    z-index: -1;
+}
+.social-icons a:hover::before{
+    width: 100%;
+}
+.home-image{
+    position:relative;
+}
+.img-box{
+    text-align: center;
+}
+.img-box img{
+    
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+.liquid-shape{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    top: 25%;
+    max-width: 550px;
+    padding: 10px;
+    overflow: visible;
+}
+.liquid-shape:nth-child(2){
+    filter: blur(50px);
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+    background: var(--secon-bg-color);
+}
+.about .img-about{
+    text-align: center;
+    position: relative;
+}
+.about .img-about img{
+max-width: 400px;
+height: auto;
+}
+.about-content{
+color: #fdfdfd;
+font-size: .8rem;
+font-weight: 200;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+.about-content h2{
+    color: var(--hover-color);
+    font-weight: 700;
+    font-size: var(--norma-font);
+}
+.about-content h3{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: .2rem;
+}
+.about-content p{
+    color: #f5f5f5;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+
+.info-about1,
+.info-about2,
+.info-about3{
+
+background: var(--bg-color);
+font-size: .5rem;
+position: absolute;
+padding: 10px;
+width: 90px;
+height: 90px;
+border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+display: block;
+box-shadow: var(--neon-box-shadow);
+z-index: 100;
+border: 1px solid var(--hover-color);
+outline: 2px solid var(--bg-color);
+animation: morph 6s linear infinite;
+
+}
+.info-about1{
+    left: 10%;
+    top: 34%;
+}
+
+.info-about2{
+    left: 66%;
+    top: 15%;
+}
+.info-about3{
+    left:60%;
+    top: 70%;
+}
+/* services section-----------------------------*/
+
+.main-text{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--hover-color);
+
+}
+.main-text h2{
+    font-weight: 700;
+    font-size: var(--norma-font);
+
+}
+.main-text span{
+    color:#f5f5f5;
+    font-size: .8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+}
+
+.section-services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap:2rem;
+}
+.section-services .service-box{
+    flex: 1 1 18rem;
+    padding: 2rem 1rem 2rem;
+    text-align: center;
+    background:var(--secon-bg-color);
+    transition:transform .4s;
+    border-radius: 10px;
+}
+.service-btn{
+    width: auto;
+    justify-content: center;
+}
+.service-box:hover{
+    transform: translate( -.7rem);
+}
+.service-icon{
+    border: 2px solid var(--hover-color);
+    padding: 2rem;
+    background:var(--bg-color);
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: 50%;
+    color: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+    outline: 3px solid var(--bg-color);
+}
+.service-box h3{
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+.service-box p{
+    margin: .5rem 0 1.5rem 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+
+.skill-main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+}
+.skill-bar{
+    margin-bottom: 2.3rem;
+}
+.skill-main h3{
+    margin-bottom: 2rem;
+    font-size: var(--norma-font);
+    text-align: center;
+}
+.skill-left .skill-bar .info{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 10px;
+}
+.skill-left .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+.skill-bar .bar span{
+    width: 50%;
+    height: 100%;
+    position:absolute;
+    left: 0;
+    background:var(--hover-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+
+}
+
+.skill-bar .bar .html{
+    width: 70%;
+    animation: html 2s;
+}
+.skill-bar .bar .css{
+    width: 65%;
+    animation: css 3s;
+}
+.skill-bar .bar .javascript{
+    width: 60%;
+    animation: javascript 4s;
+}
+.skill-bar .bar .python{
+    width: 75%;
+    animation: python 5s;
+}
+.skill-bar .bar .sql{
+    width: 75%;
+    animation: sql 6s;
+}
+
+.professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+}
+.box{
+    margin:10px 0;
+    flex:1 1 15rem;
+    position: relative;
+}
+.box .text{
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.box .text big{
+    font:400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.box .text small{
+    display: block;
+    font-weight: 600;
+}
+.circle{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /*border: 2px solid #fff;*/
+
+}
+.circle .points{
+    width: 2px;
+    height: 10px;
+    background-color: var(--bg-color);
+    position: absolute;
+    border-radius:3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+    justify-content: space-between;
+    
+
+}
+
+.points.marked{
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+}
+
+/* portfolio */
+.portfolio{
+    background: var(--secon-bg-color);
+}
+.filter-button{
+    margin: 2rem;
+    text-align: center;
+}
+.filter-button .btn{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .4px;
+    margin-left: 1.3rem;
+    color: var(--text-color);
+
+}
+.filter-button .btn:hover{
+    color: var(--hover-color);
+
+}
+.portfolio-gallary{
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+    gap: 2rem;
+}
+.port-box{
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background:#292e33;
+    display: flex;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    border: 2px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+
+}
+.port-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.port-image img{
+    width: 100%;
+    opacity: .5s;
+    height: 100%;
+    transition: .5s;
+}
+
+.port-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    opacity: 0;
+    background: linear-gradient(rgba(0,0,0,.2),#12f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.5s;
+    padding: 0 2rem;
+}
+.port-box:hover .port-content{
+    opacity: 1;
+}
+
+.port-box:hover .port-image img{
+    transform: scale(1.1);
+}
+
+.port-content h3{
+    font-size:1.5rem;
+    font-weight:600;
+
+}
+.port-content p{
+    font-size:.8rem;
+    margin: 5px 0 15px;
+
+}
+.port-content a{
+    background:#fff;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--hover-color);
+    outline: 2px solid white;
+
+}
+
+.contact{
+   
+    width: 100%;
+
+}
+.contact form{
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    
+
+}
+.contact form input,
+.contact form textarea{
+width: 100%;
+color: var(--text-color);
+background: var(--secon-bg-color);
+margin-bottom: .8rem;
+border: none;
+border-radius: 5px;
+padding: .7rem;
+}
+.contact form textarea{
+    resize: none;
+}
+.formbtn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.formbtn .btn{
+cursor: pointer;
+font-size: 1rem;
+}
+
+footer{
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--secon-bg-color);
+}
+footer a{
+    color: #bdbdbd;
+
+}
+footer a{
+    display: inline-flex;
+    justify-content: center;
+    color: var(--text-color);
+    background: var(--hover-color);
+    padding: .6rem;
+    border-radius: 5px;
+
+}
+footer a i{
+    font-size:1rem;
+    color: var(--secon-bg-color);
+}
+
+
+.education{
+    background: var(--secon-bg-color);
+}
+.education_container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.edu_box{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--secon-bg-color);
+    display: flex;
+    grid-template-rows: 1fr;
+    border: 2px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+}
+.edu_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.edu_img img{
+    width: 100%;
+    opacity: .5s;
+    height: 300px;
+    transition: .5s;
+}
+.edu_content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: linear-gradient(rgba(0,0,0,2),#12f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.5s;
+    padding: 0 2rem;
+}
+.edu_box:hover .edu_content{
+    opacity: 1;
+}
+.edu_box:hover .edu_img img{
+    transform: scale(1.1);
+}
+
+
+
+
+.scroll-scale{
+    opacity: 0;
+    transform:scale(.9);
+    transition: all 2s;
+}
+.scroll-bottom{
+    opacity: 0;
+    transform:translateY(300px);
+    transition:3s;
+}
+.scroll-top{
+    opacity: 0;
+    transform:translateY(-300px);
+    transition: 3s;
+}
+.show-items{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes morph{
+    0%,
+    100%{
+        border-radius: 40% 60% 70% 30% /40% 40% 60% 50%;
+    }
+    30%{
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    60%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+    80%{
+        border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    }
+}
+@keyframes html{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:70%;
+    }
+}
+@keyframes css{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:65%;
+    }
+}
+@keyframes javascript{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:60%;
+    }
+}
+@keyframes python{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:75%;
+    }
+}
+@keyframes sql{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:75%;
+    }
+}
+@keyframes glow{
+    0%{ 
+        background-color: var(--bg-color);
+        box-shadow: none;
+        
+    }
+    100%{
+        background-color: var(--hover-color);
+        box-shadow: var(--neon-box-shadow);
+    }
+}
+
+@media(max-width:991px){
+    header,
+    header.sticky{
+        padding: 15px 5%;
+    }
+    footer{
+        padding: 15px 5%;
+    }
+    section{
+        padding: 50px 5%;
+    }
+    .navlist{
+        padding:8px 15px ;
+    }
+    :root{
+        --big-font:2.2rem;
+        --norma-font:2rem;
+        --neon-box-shadow:0 0 .5rem #12f7ff;
+        --h2-font:3rem;
+    }
+    .home-content{
+        margin-top: 2rem;
+    }
+
+}
+@media(max-width:768px){
+    .navlist{
+        margin: 1.5rem;
+    }
+    .home{
+        grid-template-columns: 1fr;
+        
+    }
+    .home-image{
+        margin-bottom: 5rem;
+
+    }
+    .liquid-shape{
+        width: 100%;
+        left: 10%;
+        top:3%;
+    }
+    .about{
+        flex-direction: column-reverse;
+    }
+    .skill-main{
+        grid-template-columns: 1fr;
+    }
+
+}
+@media(max-width:420px){
+    html{
+        font-size: 80%;
+    }
+    footer p{
+        font-size: .6rem;
+    }
+    .img-about img{
+        width: 300px;
+    }
+    .info-about1,.info-about2,.info-about3{
+        display: none;
+    }
+    .img-about p{
+        font-size: 1rem;
+    }
+}
+
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>S</span>iva</div>
+        <ul class="navlist">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="menu-icon" class='bx bx-menu'></div>
+    </header>
+<!--home section-->
+<section id="home" class="home">
+    <div class="home-content scroll-scale">
+        <h1>Hi! I'm Siva Prasad
+        </h1>
+        <div class="change-text">
+            <h3>And I'm</h3>
+            <h3>
+                <span class="word">Web&nbsp;Designer</span>
+                <span class="word">Frontend&nbsp;Developer</span>
+
+                <span class="word">Backend&nbsp;Developer</span>
+
+                <span class="word">Mobile&nbsp;Application &nbsp;Developer</span>
+
+            </h3>
+        </div>
+        
+    <p>I am a passionate web developer with expertise in building dynamic and responsive web applications. I specialize in Python and Django for backend development and HTML,CSS,Java Scripts for frontend applications. My goal is to create user-friendly, efficient, and scalable web solutions that enhance digital experiences.</p>
+<div class="info-box">
+    <div class="email-info">
+        <h5>Email:</h5>
+        <span>sivaprasadkandena@gmail.com</span>
+    </div>
+    <div class="behance-info">
+        <h5>Phone:</h5>
+        <span>6302718928</span>
+    </div>
+</div>    
+<div class="btn-box">
+    <a href="#" class="btn">Download CV</a>
+    <a href="#" class="btn">Hire Me Now</a>
+</div>
+<div class="social-icons">
+    <a href="https://www.facebook.com/people/Siva-Prasad/pfbid02a5Uov1WHBrjQNveuJfvAFSWe869PeYXaAb6G3sJ1vAEd2kt4rLeAknqvaLZ51jXHl/?ref=ig_profile_ac"><i class='bx bxl-facebook'></i></a>
+    <a href="https://www.instagram.com/friendly_siva___420/?__pwa=1#"><i class='bx bxl-instagram' ></i></a>
+    <a href="#"><i class='bx bxl-twitter' ></i></a>
+    <a href="#"><i class='bx bxl-linkedin'></i></a>
+</div>
+</div>
+<div class="home-image">
+    <div class="img-box">
+        <img src="img/siva_img.png" alt="">
+    </div>
+    <div class="liquid-shape">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+            <path  fill="#12f7ff">
+                <animate attributeName="d"
+                dur="10000ms"
+                repeatCount="indefinite"
+                values="
+                M390.5,319Q329,388,230,422Q131,456,101.5,353Q72,250,99,143Q126,36,227,75.5Q328,115,390,182.5Q452,250,390.5,319Z;
+                M366.5,291Q347,332,317,397Q287,462,222,436.5Q157,411,111,364Q65,317,117.5,269Q170,221,163,154Q156,87,210.5,125.5Q265,164,288,181Q311,198,348.5,224Q386,250,366.5,291Z;
+                M410.5,289.5Q415,329,382.5,352Q350,375,320,400Q290,425,254.5,405.5Q219,386,167,403Q115,420,92.5,378.5Q70,337,57,293.5Q44,250,71,213.5Q98,177,126,153.5Q154,130,183.5,110Q213,90,255.5,66Q298,42,333.5,71.5Q369,101,410,127Q451,153,428.5,201.5Q406,250,410.5,289.5Z;
+                M378,353.5Q369,457,274,415Q179,373,101,311.5Q23,250,89,168Q155,86,243.5,96.5Q332,107,359.5,178.5Q387,250,378,353.5Z;
+                M418.5,321.5Q447,393,379.5,417Q312,441,260,410Q208,379,135.5,382.5Q63,386,75,318Q87,250,117.5,213Q148,176,161.5,97.5Q175,19,243,41Q311,63,345.5,109.5Q380,156,385,203Q390,250,418.5,321.5Z;
+                M390.5,319Q329,388,230,422Q131,456,101.5,353Q72,250,99,143Q126,36,227,75.5Q328,115,390,182.5Q452,250,390.5,319Z;
+                "
+               ></animate> 
+            </path>
+          </svg>
+    </div>
+    <div class="liquid-shape">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+            <path  fill="#12f7ff">
+                <animate attributeName="d"
+                dur="10000ms"
+                repeatCount="indefinite"
+                values="
+                M390.5,319Q329,388,230,422Q131,456,101.5,353Q72,250,99,143Q126,36,227,75.5Q328,115,390,182.5Q452,250,390.5,319Z;
+                M366.5,291Q347,332,317,397Q287,462,222,436.5Q157,411,111,364Q65,317,117.5,269Q170,221,163,154Q156,87,210.5,125.5Q265,164,288,181Q311,198,348.5,224Q386,250,366.5,291Z;
+                M410.5,289.5Q415,329,382.5,352Q350,375,320,400Q290,425,254.5,405.5Q219,386,167,403Q115,420,92.5,378.5Q70,337,57,293.5Q44,250,71,213.5Q98,177,126,153.5Q154,130,183.5,110Q213,90,255.5,66Q298,42,333.5,71.5Q369,101,410,127Q451,153,428.5,201.5Q406,250,410.5,289.5Z;
+                M378,353.5Q369,457,274,415Q179,373,101,311.5Q23,250,89,168Q155,86,243.5,96.5Q332,107,359.5,178.5Q387,250,378,353.5Z;
+                M418.5,321.5Q447,393,379.5,417Q312,441,260,410Q208,379,135.5,382.5Q63,386,75,318Q87,250,117.5,213Q148,176,161.5,97.5Q175,19,243,41Q311,63,345.5,109.5Q380,156,385,203Q390,250,418.5,321.5Z;
+                M390.5,319Q329,388,230,422Q131,456,101.5,353Q72,250,99,143Q126,36,227,75.5Q328,115,390,182.5Q452,250,390.5,319Z;
+                "
+               ></animate> 
+            </path>
+          </svg>
+    </div>
+</div>
+</section>
+<section class="about" id="about">
+    <div class="img-about">
+        <img src="img/siva3.png" alt="">
+        <div class="info-about1">
+            <span>0</span>
+            <p>Years of Experience</p>
+        </div>
+        <div class="info-about2">
+            <span>3</span>
+            <p>Project Completed</p>
+        </div>
+        <div class="info-about3">
+            <span>3 years </span>
+            <p>of development</p>
+        </div>
+    </div>
+    <div class="about-content scroll-scale">
+        <span>
+            Let me introduce myself
+        </span>
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm Siva Prasad, a passionate Web Developer with expertise in Python, Django, HTML,css, javascript and postgesql. I love building web and mobile applications that solve real-world problems. Currently, I'm exploring Mobile Applications development and its applications in ai powered smart travel planner.
+        </p>
+        <div class="btn-box">
+            <a href="#" class="btn" >Read More</a>
+        </div>
+    </div>
+</section>
+<section class="services" id="services">
+    <div class="main-text scroll-scale">
+        <span>What i will do to you</span>
+        <h2>My services</h2>
+    </div>
+    <div class="section-services">
+        <div class="service-box">
+            <i class='bx bx-globe service-icon' ></i>
+            
+            <h3>Web Developer</h3>
+            <p>
+                I build fully customized, responsive websites tailored to your business needs. Whether you need a personal portfolio, a business website, or an e-commerce platform, I ensure high performance and user-friendly designs.
+            </p>
+            <div class="btn-box service-btn">
+              <a href="#"  class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="service-box">
+            <i class='bx bx-mobile service-icon' ></i>
+            
+            <h3>Mobile Application Developer</h3>
+            <p>
+                I build fully customized, responsive websites tailored to your business needs. Whether you need a personal portfolio, a business website, or an e-commerce platform, I ensure high performance and user-friendly designs.
+            </p>
+            <div class="btn-box service-btn">
+              <a href="#"  class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="service-box">
+            <i class='bx bx-code-alt service-icon' ></i>
+            
+            <h3>machine Learning</h3>
+            <p>
+                I build fully customized, responsive websites tailored to your business needs. Whether you need a personal portfolio, a business website, or an e-commerce platform, I ensure high performance and user-friendly designs.
+            </p>
+            <div class="btn-box service-btn">
+              <a href="#"  class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="education" class="education">
+    <div class="main-text scroll-scale">
+        <span>About My</span>
+        <h2>Education</h2>
+    </div>
+    <div class="education_container scroll-scale">
+        <div class="edu_box">
+            <div class="edu_img">
+                <img src="img/ssc_img.jpeg" >
+            </div>
+            <div class="edu_content">
+                <h3>&#127979;Secondary Education(10th Grade)</h3>
+                <p><strong> Sai Nikethan High School ,Garugubilli,Manyam.</strong>
+                "|2019"</p>
+                <p>"Completed foundational education with a focus on core subjects, developing a strong academic base."</p>
+                <a href="https://maps.app.goo.gl/rRepeFrV8Fh2Rhdb6"><i class='bx bxs-map' ></i>Mainroad, Garugubilli, Vizianagaram - 535463 (Opposite ZHPS School)</P></a>
+                <a href="tel:0566-2356"><i class='bx bxs-phone' ></i>Phone:0566-2356</a>
+                <a href="#"><i class='bx bx-link-external'></i>Know More</a>
+            </div>
+            
+
+        </div>
+        <div class="edu_box">
+            <div class="edu_img">
+                <img src="img/inter_img.jpeg" >
+            </div>
+            
+            <div class="edu_content">
+                <h3> &#128216;Intermediate (MPC)</h3>
+                <p><strong>Narayana Junior College,paradesipalem,Visakhapatnam</strong>"|2019-2021"</p>
+                <p>Focused on Mathematics, Physics, and Chemistry, strengthening analytical and  Problem solving skills.</p>
+                <a href="https://maps.app.goo.gl/wo7XqpNA9ChKQdBw7"><i class='bx bxs-map' ></i>ParadesiPalem Road, Visakhapatnam - 531163 (Opposite Mahindra Audi Showroom)</P></a>
+                <a href="tel:0566-2356"><i class='bx bxs-phone' ></i>04067-438752</a>
+                <a href="#"><i class='bx bx-link-external'></i>Know More</a>
+            </div>
+            
+
+        </div>
+        <div class="edu_box">
+            <div class="edu_img">
+                <img src="img/btech_img.jpeg" >
+            </div>
+            <div class="edu_content">
+                <h3>&#127891;B.tech in Information Technolgy</h3>
+                <p><strong>Bapatla Engineering College (Autonomous)</strong>"|2021-2025"</p>
+                <p>Specialized in Full Stack Development with expertise in modern web technologies.</p>
+                <a href="https://maps.app.goo.gl/ALuQby5aVxhT44GN9"><i class='bx bxs-map' ></i>GBC Rd, Mahatmajipuram, Bapatla, Andhra Pradesh 522102</P></a>
+                <a href="tel:08643223200"><i class='bx bxs-phone' ></i>08643223200</a>
+                <a href="http://becbapatla.ac.in/"><i class='bx bx-link-external'></i>Know More</a>
+            </div>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+        </div>
+    </div>
+
+</section>
+
+<section class="skills" id="skills">
+<div class="main-text scroll-scale">
+    <span>Technical and Professional</span>
+    <h2>My Skills</h2>
+    </div>
+    <div class="skill-main ">
+    <div class="skill-left scroll-scale">
+        <h3>Technical Skills</h3>
+        <div class="skill-bar">
+            <div class="info">
+                <p>HTML</p>
+                <p>70%</p>
+            </div>
+            <div class="bar">
+                <span class="html"></span>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <div class="info">
+                <p>CSS</p>
+                <p>65%</p>
+            </div>
+            <div class="bar">
+                <span class="css"></span>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <div class="info">
+                <p>Java script</p>
+                <p>60%</p>
+            </div>
+            <div class="bar">
+                <span class="javascript"></span>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <div class="info">
+                <p>Python</p>
+                <p>75%</p>
+            </div>
+            <div class="bar">
+                <span class="python"></span>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <div class="info">
+                <p>SQL</p>
+                <p>75%</p>
+            </div>
+            <div class="bar">
+                <span class="sql"></span>
+            </div>
+        </div>
+    </div>
+    <div class="skill-right scroll-scale">
+        <h3>Professional Skills</h3>
+
+    <div class="professional">
+        <div class="box">
+            <div class="circle" data-points="43" data-percent="86" ></div>
+            <div class="text">
+                <big>86%</big>
+                <small>Team Work</small>
+            </div>
+        </div>
+    <div class="box">
+        <div class="circle" data-points="40" data-percent="80" ></div>
+        <div class="text">
+            <big>80%</big>
+            <small>Communication</small>
+        </div>
+    </div>
+    <div class="box">
+        <div class="circle" data-points="39" data-percent="78" ></div>
+        <div class="text">
+            <big>78%</big>
+            <small>Problem Solving</small>
+        </div>
+    </div>
+    <div class="box">
+        <div class="circle" data-points="38" data-percent="76" ></div>
+        <div class="text">
+            <big>76%</big>
+            <small>Time Management & Organization</small>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section id="portfolio" class="portfolio">
+    <div class="main-text scroll-scale">
+        <span>What i will do</span>
+        <h2>Latest Projects</h2>
+    </div>
+    <div class="container scroll-scale">
+        <div class="filter-button">
+            <button class="btn">ALL</button>
+            <button class="btn">Web app</button>
+            <button class="btn">mobile App</button>
+
+        </div>
+        <div class="portfolio-gallary">
+            <div class="port-box">
+                <div class="port-image">
+                    <img src="img/img1.jpeg">
+                </div>
+                <div class="port-content">
+                    <h3>web app</h3>
+                    <p>Developed a dynamic travel web application with interactive maps, real-time weather updates, and personalized itinerary planning.
+                        </p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+
+                </div>
+                
+            </div>
+
+        <div class="port-box">
+            <div class="port-image">
+                <img src="img/img2.jpeg">
+            </div>
+            <div class="port-content">
+                <h3>mobile app</h3>
+                <p>Built an AI-powered smart travel app that provides personalized trip recommendations, real-time insights, and seamless itinerary planning.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+            </div>
+            
+
+        </div>
+
+    <div class="port-box">
+        <div class="port-image">
+            <img src="img/img1.jpeg">
+        </div>
+        <div class="port-content">
+            <h3>Data Science Using Python</h3>
+            <p>Deposit Term Investment Analysis .Developed a predictive model to analyse customer investment behaviour.
+                
+                </p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+        </div>
+        
+
+    </div>
+</div>
+    </div>
+</section>
+<!-- contact section-->
+<section id="contact" class="contact">
+<div class="main-text scroll-scale">
+    <span>ask me anything</span>
+    <h3>Contact Me</h3>
+</div>
+<form action="#" class="scroll-scale">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your email" required>
+    <input type="text" placeholder="Your Address">
+    <input type="number" placeholder="phone number"required >
+    <textarea name="" id="" cols="30" rows="10" placeholder="ypur message"></textarea>
+    <div class="btn-box formbtn">
+        <button type="submit" class="btn">send message</button>
+    </div>
+
+</form>
+
+</section>
+
+<!--foeter website  -->
+<footer>
+    <p class="scroll-scale">
+        copyright &copy; 2025 by siva Prasad \\ All Right Reserved
+    </p>
+    <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+</footer>
+    <script>
+        let words=document.querySelectorAll(".word");
+words.forEach((word)=>{
+    let letters=word.textContent.split("");
+    word.textContent="";
+    letters.forEach((letter)=>{
+        let span=document.createElement("span");
+        span.textContent=letter;
+        span.className="letter";
+        word.append(span);
+    });
+});
+let currentwordindex=0;
+let maxwordindex=words.length-1;
+words[currentwordindex].style.opacity="1";
+let changetext=()=>{
+    let currentword=words[currentwordindex];
+    let nextword=currentwordindex===maxwordindex ? words[0] :words[currentwordindex +1];
+    Array.from(currentword.children).forEach((letter,i)=>{
+        setTimeout(()=>{
+            letter.className="letter out";
+        },i*80);
+    });
+    nextword.style.opacity="1";
+    Array.from(nextword.children).forEach((letter,i)=>{
+        letter.className="letter behind";
+        setTimeout(()=>{
+        letter.className="letter in";
+        
+    },340+i*80);
+    });
+    currentwordindex=currentwordindex===maxwordindex?0:currentwordindex+1;
+
+};
+changetext();
+setInterval(changetext,3000);
+//circle skill///
+const circles = document.querySelectorAll(".circle");
+
+circles.forEach(elem => {
+    var dots = parseInt(elem.getAttribute("data-points"));
+    var marked = parseInt(elem.getAttribute("data-percent"));
+    var percent = Math.floor(dots * marked / 100);
+    var points = "";
+    var rotate = 360 / dots;
+
+    for (let i = 0; i < dots; i++) {
+        points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
+    }
+
+    elem.innerHTML = points;
+    const pointsMarked=elem.querySelectorAll('.points');
+    for(let i=0;i<percent;i++){
+        pointsMarked[i].classList.add('marked')
+    }
+});
+let menuLi=document.querySelectorAll('header ul li a');
+let section=document.querySelectorAll('section');
+function activeMenu(){
+    let  len=section.length;
+    while(--len && window.scrollY+97 <section[len].offsetTop){}
+    menuLi.forEach(sec=>sec.classList.remove("active"));
+    menuLi[len].classList.add("active");
+
+}
+activeMenu();
+window.addEventListener("scroll",activeMenu);
+const header =document.querySelector("header");
+window.addEventListener("scroll",function(){
+    header.classList.toggle("sticky",this.window.scrollY>50)
+})
+
+const observer=new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show-items");
+        }
+        else{
+            entry.target.classList.remove("show-items");
+        }
+    });
+});
+const scrollScale=document.querySelectorAll(".scroll-scale");
+scrollScale.forEach((el)=>observer.observe(el));
+const scrollBottom=document.querySelectorAll(".scroll-bottom");
+scrollBottom.forEach((el)=>observer.observe(el));
+const scrollTop=document.querySelectorAll(".scroll-top");
+scrollTop.forEach((el)=>observer.observe(el));
+    </script>
+</body>
+</html>
